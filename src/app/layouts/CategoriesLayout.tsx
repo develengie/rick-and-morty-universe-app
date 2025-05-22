@@ -2,9 +2,15 @@ import { useParams } from 'react-router-dom';
 import ElementDetailPage from '../components/pages/ElementDetailPage';
 import CategoryPage from '../components/pages/CategoryPage';
 import MainPage from '../components/pages/MainPage';
+import type { Category } from '../models/models';
+
+interface Params {
+    category?: Category;
+    id?: string;
+}
 
 const CategoriesLayout = () => {
-    const { category, id } = useParams();
+    const { category, id } = useParams() as Params;
 
     return (
         <>
@@ -12,7 +18,7 @@ const CategoriesLayout = () => {
                 id ? (
                     <ElementDetailPage />
                 ) : (
-                    <CategoryPage />
+                    <CategoryPage category={category} />
                 )
             ) : (
                 <MainPage />
