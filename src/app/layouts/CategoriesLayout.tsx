@@ -16,7 +16,7 @@ const CategoriesLayout = () => {
         <>
             {category ? (
                 id ? (
-                    <ElementDetailPage />
+                    <ElementDetailPage category={category} id={id} />
                 ) : (
                     <CategoryPage category={category} />
                 )
