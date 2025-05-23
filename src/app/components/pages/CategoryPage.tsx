@@ -1,4 +1,5 @@
 import { Navigate, useSearchParams } from 'react-router-dom';
+import _ from 'lodash';
 import { getCategoryElementsList } from '../../utils/getCategoryElementsList';
 import Select from '../ui/Select/Select';
 import CharactersTable from '../common/tables/CharactersTable';
@@ -15,6 +16,21 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
     const { characters, location, episode } = getCategoryElementsList(category);
     const [createdSort, setCreatedSort] = useSearchParams({ order: '' });
     const createdSortValue = createdSort.get('order')!;
+    const sortedCharacters = _.orderBy(
+        characters,
+        ['created'],
+        [createdSortValue === 'asc' ? 'asc' : 'desc']
+    );
+    const sortedLocation = _.orderBy(
+        location,
+        ['created'],
+        [createdSortValue === 'asc' ? 'asc' : 'desc']
+    );
+    const sortedEpisode = _.orderBy(
+        episode,
+        ['created'],
+        [createdSortValue === 'asc' ? 'asc' : 'desc']
+    );
 
     const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
         setCreatedSort({ order: event.target.value });
@@ -41,9 +57,25 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
                             { label: 'по убыванию даты', value: 'desc' },
                         ]}
                     />
-                    {characters && <CharactersTable characters={characters} />}
-                    {location && <LocationTable location={location} />}
-                    {episode && <EpisodeTable episode={episode} />}
+                    {characters && (
+                        <CharactersTable
+                            characters={
+                                createdSortValue ? sortedCharacters : characters
+                            }
+                        />
+                    )}
+                    {location && (
+                        <LocationTable
+                            location={
+                                createdSortValue ? sortedLocation : location
+                            }
+                        />
+                    )}
+                    {episode && (
+                        <EpisodeTable
+                            episode={createdSortValue ? sortedEpisode : episode}
+                        />
+                    )}
                 </div>
             </div>
         </div>
