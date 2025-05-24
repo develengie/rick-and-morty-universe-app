@@ -2,11 +2,11 @@ import { Navigate, useSearchParams } from 'react-router-dom';
 import _ from 'lodash';
 import { getCategoryElementsList } from '../../utils/getCategoryElementsList';
 import Select from '../ui/Select/Select';
-import CharactersTable from '../common/tables/CharactersTable';
-import LocationTable from '../common/tables/LocationTable';
-import EpisodeTable from '../common/tables/EpisodeTable';
+import CharactersTable from '../CharactersTable';
+import LocationTable from '../LocationTable';
+import EpisodeTable from '../EpisodeTable';
 import type { ChangeEvent } from 'react';
-import type { Category } from '../../models/models';
+import type { Category } from '../../types/types';
 
 interface CategoryPageProps {
     category: Category;

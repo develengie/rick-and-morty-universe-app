@@ -1,6 +1,4 @@
-type Status = 'Alive' | 'unknown' | 'Dead';
-type Species = 'Human' | 'Alien';
-type Gender = 'Male' | 'Female' | 'unknown';
+import type { Gender, Species, Status } from '../types/types';
 
 export interface CharactersData {
     id: number;
@@ -28,5 +26,3 @@ export interface EpisodeData {
     episode: string;
     created: string;
 }
-
-export type Category = 'characters' | 'location' | 'episode';

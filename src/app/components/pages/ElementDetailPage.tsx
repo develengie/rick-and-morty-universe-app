@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { getCategoryElementsList } from '../../utils/getCategoryElementsList';
-import ElementDetailTable from '../common/tables/ElementDetailTable';
-import type { Category } from '../../models/models';
+import ElementDetailTable from '../common/ElementDetailTable';
+import type { Category } from '../../types/types';
 
 interface ElementDetailPageProps {
     category: Category;

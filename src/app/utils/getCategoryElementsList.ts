@@ -1,13 +1,13 @@
-import { categories } from '../constants/categories';
+import { categories } from '../static/categories';
 import charactersMock from '../mock/characters.json';
 import locationMock from '../mock/location.json';
 import episodeMock from '../mock/episode.json';
 import type {
-    Category,
     CharactersData,
     LocationData,
     EpisodeData,
 } from '../models/models';
+import type { Category } from '../types/types';
 
 interface CategoryElementsList {
     characters: CharactersData[] | undefined;

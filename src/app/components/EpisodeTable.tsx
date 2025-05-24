@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { EpisodeData } from '../../../models/models';
+import type { EpisodeData } from '../models/models';
 
 type Episode = {
     episode: EpisodeData[];

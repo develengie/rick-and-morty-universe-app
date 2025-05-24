@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { LocationData } from '../../../models/models';
+import type { LocationData } from '../models/models';
 
 type Location = {
     location: LocationData[];
