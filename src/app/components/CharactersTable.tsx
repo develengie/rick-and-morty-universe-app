@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { CharactersData } from '../../../models/models';
+import type { CharactersData } from '../models/models';
 
 type Characters = {
     characters: CharactersData[];

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { internalPaths } from '../../../constants/internalPaths';
-import { categories } from '../../../constants/categories';
+import { internalPaths } from '../../../static/internalPaths';
+import { categories } from '../../../static/categories';
 import './Navigation.scss';
 
 const Navigation = () => {

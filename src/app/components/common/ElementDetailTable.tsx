@@ -2,7 +2,7 @@ import type {
     CharactersData,
     LocationData,
     EpisodeData,
-} from '../../../models/models';
+} from '../../models/models';
 
 type Element = {
     element: CharactersData | LocationData | EpisodeData;

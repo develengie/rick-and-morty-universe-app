@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import ElementDetailPage from '../components/pages/ElementDetailPage';
 import CategoryPage from '../components/pages/CategoryPage';
 import MainPage from '../components/pages/MainPage';
-import type { Category } from '../models/models';
+import type { Category } from '../types/types';
 
 interface Params {
     category?: Category;
