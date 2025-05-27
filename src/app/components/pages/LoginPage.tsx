@@ -1,9 +1,16 @@
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthProvider';
 import Signin from '../ui/Signin/Signin';
 import type { User } from '../../models/models';
 
 const LoginPage = () => {
+    const navigate = useNavigate();
+    const auth = useAuth();
+
     const handleSubmit = (user: User) => {
-        console.log(user);
+        auth.signin(user, () => {
+            navigate('/');
+        });
     };
 
     return (

@@ -1,9 +1,11 @@
 import { Outlet } from 'react-router-dom';
+import AuthStatus from '../components/common/AuthStatus/AuthStatus';
 import Navigation from '../components/ui/Navigation/Navigation';
 
 const MainLayout = () => {
     return (
         <>
+            <AuthStatus />
             <Navigation />
             <Outlet />
         </>
