@@ -26,3 +26,8 @@ export interface EpisodeData {
     episode: string;
     created: string;
 }
+
+export interface SigninData {
+    email: string;
+    password: string;
+}
