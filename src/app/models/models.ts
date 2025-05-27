@@ -27,7 +27,7 @@ export interface EpisodeData {
     created: string;
 }
 
-export interface SigninData {
+export interface User {
     email: string;
     password: string;
 }
