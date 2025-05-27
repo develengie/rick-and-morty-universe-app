@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import MainPage from './components/pages/MainPage';
+import LoginPage from './components/pages/LoginPage';
 import CategoriesLayout from './layouts/CategoriesLayout';
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
         <Routes>
             <Route element={<MainLayout />}>
                 <Route path="/" element={<MainPage />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route
                     path="/categories/:category/:id?"
                     element={<CategoriesLayout />}

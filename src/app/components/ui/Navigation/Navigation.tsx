@@ -13,6 +13,11 @@ const Navigation = () => {
                     </NavLink>
                 </li>
                 <li className="nav__list-item">
+                    <NavLink className="nav__link" to={internalPaths.login}>
+                        Login
+                    </NavLink>
+                </li>
+                <li className="nav__list-item">
                     <NavLink
                         className="nav__link"
                         to={internalPaths.category(categories.characters)}
