@@ -2,24 +2,24 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import TextInput from '../../common/TextInput/TextInput';
 import Button from '../../common/Button/Button';
 import { validator } from '../../../utils/validator';
-import type { SigninData } from '../../../models/models';
+import type { User } from '../../../models/models';
 import './Signin.scss';
 
 interface SigninProps {
-    onSubmit: (data: SigninData) => void;
+    onSubmit: (user: User) => void;
 }
 
 const Signin = ({ onSubmit }: SigninProps) => {
-    const [data, setData] = useState<SigninData>({
+    const [user, setUser] = useState<User>({
         email: '',
         password: '',
     });
 
-    const isValidEmail = validator.isEmail(data.email);
-    const isValidPassword = validator.min(data.password);
+    const isValidEmail = validator.isEmail(user.email);
+    const isValidPassword = validator.min(user.password);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setData(prevState => ({
+        setUser(prevState => ({
             ...prevState,
             [event.target.name]: event.target.value,
         }));
@@ -29,8 +29,8 @@ const Signin = ({ onSubmit }: SigninProps) => {
         event.preventDefault();
 
         if (isValidEmail && isValidPassword) {
-            onSubmit(data);
-            setData({
+            onSubmit(user);
+            setUser({
                 email: '',
                 password: '',
             });
@@ -49,7 +49,7 @@ const Signin = ({ onSubmit }: SigninProps) => {
                 isAsterisk={true}
                 type="email"
                 name="email"
-                value={data.email}
+                value={user.email}
                 onChange={handleChange}
             />
             <TextInput
@@ -62,7 +62,7 @@ const Signin = ({ onSubmit }: SigninProps) => {
                 isAsterisk={true}
                 type="password"
                 name="password"
-                value={data.password}
+                value={user.password}
                 onChange={handleChange}
             />
             <Button
