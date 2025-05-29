@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import AuthProvider from './context/AuthProvider';
 import MainLayout from './layouts/MainLayout';
-import MainPage from './components/pages/MainPage';
-import LoginPage from './components/pages/LoginPage';
+import MainPage from './pages/MainPage';
+import LoginPage from './pages/LoginPage';
 import CategoriesLayout from './layouts/CategoriesLayout';
 
 const App = () => {

@@ -1,8 +1,8 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import TextInput from '../../common/TextInput/TextInput';
-import Button from '../../common/Button/Button';
-import { validator } from '../../../utils/validator';
-import type { User } from '../../../models/models';
+import TextInput from '../../components/common/TextInput/TextInput';
+import Button from '../../components/common/Button/Button';
+import { validator } from '../../utils/validator';
+import type { User } from '../../models/models';
 import './Signin.scss';
 
 interface SigninProps {

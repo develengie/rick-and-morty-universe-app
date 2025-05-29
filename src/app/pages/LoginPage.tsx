@@ -1,7 +1,7 @@
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthProvider';
+import { useAuth } from '../context/AuthProvider';
 import Signin from '../ui/Signin/Signin';
-import type { User } from '../../models/models';
+import type { User } from '../models/models';
 
 const LoginPage = () => {
     const location = useLocation();
