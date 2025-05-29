@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import AuthStatus from '../components/common/AuthStatus/AuthStatus';
-import Navigation from '../components/ui/Navigation/Navigation';
+import Navigation from '../ui/Navigation/Navigation';
 
 const MainLayout = () => {
     return (

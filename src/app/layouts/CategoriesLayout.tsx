@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import PrivateRoute from '../components/common/PrivateRoute';
-import ElementDetailPage from '../components/pages/ElementDetailPage';
-import CategoryPage from '../components/pages/CategoryPage';
-import LoginPage from '../components/pages/LoginPage';
+import ElementDetailPage from '../pages/ElementDetailPage';
+import CategoryPage from '../pages/CategoryPage';
+import LoginPage from '../pages/LoginPage';
 import type { Category } from '../types/types';
 
 interface Params {
