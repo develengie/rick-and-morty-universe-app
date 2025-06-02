@@ -1,5 +1,3 @@
-import './Page.scss';
-
 const MainPage = () => {
     return (
         <div className="page">
