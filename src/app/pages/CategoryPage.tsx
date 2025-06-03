@@ -1,44 +1,23 @@
-import { Navigate, useSearchParams } from 'react-router-dom';
-import _ from 'lodash';
-import { getCategoryElementsList } from '../utils/getCategoryElementsList';
-import Select from '../ui/Select/Select';
-import CharactersTable from '../components/CharactersTable';
-import LocationTable from '../components/LocationTable';
-import EpisodeTable from '../components/EpisodeTable';
-import type { ChangeEvent } from 'react';
-import type { Category } from '../types/types';
+import { useSearchParams } from "react-router-dom";
+import { categories } from "../static/categories";
+import Select from "../ui/Select/Select";
+import CharactersTable from "../components/CharactersTable";
+import LocationTable from "../components/LocationTable";
+import EpisodeTable from "../components/EpisodeTable";
+import type { ChangeEvent } from "react";
+import type { Category } from "../types/types";
 
 interface CategoryPageProps {
     category: Category;
 }
 
 const CategoryPage = ({ category }: CategoryPageProps) => {
-    const { characters, location, episode } = getCategoryElementsList(category);
-    const [createdSort, setCreatedSort] = useSearchParams({ order: '' });
-    const createdSortValue = createdSort.get('order')!;
-    const sortedCharacters = _.orderBy(
-        characters,
-        ['created'],
-        [createdSortValue === 'asc' ? 'asc' : 'desc']
-    );
-    const sortedLocation = _.orderBy(
-        location,
-        ['created'],
-        [createdSortValue === 'asc' ? 'asc' : 'desc']
-    );
-    const sortedEpisode = _.orderBy(
-        episode,
-        ['created'],
-        [createdSortValue === 'asc' ? 'asc' : 'desc']
-    );
+    const [createdSort, setCreatedSort] = useSearchParams({ order: "" });
+    const createdSortValue = createdSort.get("order")!;
 
     const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
         setCreatedSort({ order: event.target.value });
     };
-
-    if (!characters && !location && !episode) {
-        return <Navigate to="/" />;
-    }
 
     return (
         <div className="page">
@@ -49,32 +28,22 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
                     </h1>
                     <Select
                         name="createdSort"
-                        value={createdSortValue ? createdSortValue : ''}
+                        value={createdSortValue ? createdSortValue : ""}
                         onChange={handleChange}
                         defaultOption="Сортировать категории..."
                         options={[
-                            { label: 'по возрастанию даты', value: 'asc' },
-                            { label: 'по убыванию даты', value: 'desc' },
+                            { label: "по возрастанию даты", value: "asc" },
+                            { label: "по убыванию даты", value: "desc" },
                         ]}
                     />
-                    {characters && (
-                        <CharactersTable
-                            characters={
-                                createdSortValue ? sortedCharacters : characters
-                            }
-                        />
+                    {category === categories.characters.name && (
+                        <CharactersTable createdSortValue={createdSortValue} />
                     )}
-                    {location && (
-                        <LocationTable
-                            location={
-                                createdSortValue ? sortedLocation : location
-                            }
-                        />
+                    {category === categories.location.name && (
+                        <LocationTable createdSortValue={createdSortValue} />
                     )}
-                    {episode && (
-                        <EpisodeTable
-                            episode={createdSortValue ? sortedEpisode : episode}
-                        />
+                    {category === categories.episode.name && (
+                        <EpisodeTable createdSortValue={createdSortValue} />
                     )}
                 </div>
             </div>

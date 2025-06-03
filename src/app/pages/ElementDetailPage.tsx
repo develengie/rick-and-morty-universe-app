@@ -1,7 +1,7 @@
-import { Navigate } from 'react-router-dom';
-import { getCategoryElementsList } from '../utils/getCategoryElementsList';
-import ElementDetailTable from '../components/common/ElementDetailTable';
-import type { Category } from '../types/types';
+import { Navigate } from "react-router-dom";
+import { useFetch } from "../hooks/useFetch";
+import ElementDetailTable from "../components/common/ElementDetailTable";
+import type { Category } from "../types/types";
 
 interface ElementDetailPageProps {
     category: Category;
@@ -12,10 +12,7 @@ const ElementDetailPage = ({
     category,
     id: elementId,
 }: ElementDetailPageProps) => {
-    const сategoryElementsList = getCategoryElementsList(category);
-    const element = сategoryElementsList[category]!.find(
-        item => item.id.toString() === elementId.toString()
-    );
+    const { element, loading, error } = useFetch(category, elementId);
 
     if (!element) {
         return <Navigate to="/" />;
@@ -25,8 +22,15 @@ const ElementDetailPage = ({
         <div className="page">
             <div className="container">
                 <div className="page__inner">
-                    <h1 className="page__title">{element.name}</h1>
-                    <ElementDetailTable element={element} />
+                    {Object.keys(element).length > 0 && (
+                        <h1 className="page__title">{element.name}</h1>
+                    )}
+                    <ElementDetailTable
+                        element={element}
+                        loading={loading}
+                        error={error}
+                        category={category}
+                    />
                 </div>
             </div>
         </div>
