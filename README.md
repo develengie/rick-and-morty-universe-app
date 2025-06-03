@@ -36,3 +36,14 @@
 <hr>
 
 В приложение добавлена страница LoginPage на основе auth-forms: https://github.com/develengie/auth-forms. Страница категории и детальная страница элемента являются приватными, чтобы пользователи могли их просматривать только после авторизации. Реализация перечисленного осуществлена с помощью Context API и React Router v6.
+
+<hr>
+
+Для всех страниц были использованы Suspense, Lazy loading и Error Boundary на тот случай, если в реализации что-то пойдет не так (только внутри контента приложения, навигация всегда рабочая).<br>
+
+Создан Infinity Scroll для всех категорий по следующим URL:
+ - [https://rickandmortyapi.com/api/character](https://rickandmortyapi.com/api/character)
+ - [https://rickandmortyapi.com/api/location](https://rickandmortyapi.com/api/location)
+ - [https://rickandmortyapi.com/api/episode](https://rickandmortyapi.com/api/episode)
+
+Лимит по умолчанию - 20 элементов. При переходе на следующую страницу необходимо использовать query-параметр `page`.
