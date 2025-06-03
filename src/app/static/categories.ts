@@ -1,5 +1,11 @@
 export const categories = {
-    characters: 'characters',
-    location: 'location',
-    episode: 'episode',
+    characters: {
+        name: "character",
+    },
+    location: {
+        name: "location",
+    },
+    episode: {
+        name: "episode",
+    },
 };

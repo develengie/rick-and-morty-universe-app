@@ -1,8 +1,8 @@
-import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../context/AuthProvider';
-import { internalPaths } from '../../static/internalPaths';
-import { categories } from '../../static/categories';
-import './Navigation.scss';
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../../context/AuthProvider";
+import { internalPaths } from "../../static/internalPaths";
+import { categories } from "../../static/categories";
+import "./Navigation.scss";
 
 const Navigation = () => {
     const auth = useAuth();
@@ -28,7 +28,7 @@ const Navigation = () => {
                             <NavLink
                                 className="nav__link"
                                 to={internalPaths.category(
-                                    categories.characters
+                                    categories.characters.name
                                 )}
                             >
                                 Characters
@@ -37,7 +37,9 @@ const Navigation = () => {
                         <li className="nav__list-item">
                             <NavLink
                                 className="nav__link"
-                                to={internalPaths.category(categories.location)}
+                                to={internalPaths.category(
+                                    categories.location.name
+                                )}
                             >
                                 Location
                             </NavLink>
@@ -45,7 +47,9 @@ const Navigation = () => {
                         <li className="nav__list-item">
                             <NavLink
                                 className="nav__link"
-                                to={internalPaths.category(categories.episode)}
+                                to={internalPaths.category(
+                                    categories.episode.name
+                                )}
                             >
                                 Episode
                             </NavLink>
