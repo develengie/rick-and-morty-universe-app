@@ -47,3 +47,35 @@
  - [https://rickandmortyapi.com/api/episode](https://rickandmortyapi.com/api/episode)
 
 Лимит по умолчанию - 20 элементов. При переходе на следующую страницу необходимо использовать query-параметр `page`.
+
+<hr>
+
+Использована дизайн-система Material UI, в приложение добавлен компонент навигации Breadcrumbs.<br>
+Приложение переделано с использованием архитектуры Feature-sliced design:
+- app
+    - categories
+    - internalPaths
+    - layouts
+    - providers
+ - pages
+    - CategoryPage
+    - ElementDetailPage
+    - LoginPage
+    - MainPage
+ - widgets
+    - AuthStatus
+    - ElementDetailTable
+    - Navigation
+ - features
+    - Signin
+ - entities
+    - CharactersTable
+    - EpisodeTable
+    - LocationTable
+ - shared
+    - api
+    - config
+    - hooks
+    - lib
+    - ui
+    - validations
