@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import AuthStatus from "../components/common/AuthStatus/AuthStatus";
-import Navigation from "../ui/Navigation/Navigation";
-import ErrorBoundary from "../components/common/ErrorBoundary";
-import Loader from "../components/common/Loader/Loader";
+import AuthStatus from "../../widgets/AuthStatus";
+import Navigation from "../../widgets/Navigation";
+import { ErrorBoundary } from "../../app/providers";
+import { Loader } from "../../shared/ui";
 
 const MainLayout = () => {
     return (
