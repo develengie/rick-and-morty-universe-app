@@ -1,11 +1,13 @@
 .nav {
+    display: flex;
+    justify-content: center;
     padding: 10px 0;
 }
 
-.nav__list {
-    display: flex;
-    justify-content: center;
-}
+// .nav__list {
+//     display: flex;
+//     justify-content: center;
+// }
 
 .nav__list-item {
     margin: 0 10px;
@@ -13,4 +15,8 @@
 
 .nav__link {
     text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
