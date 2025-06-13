@@ -79,3 +79,7 @@
     - lib
     - ui
     - validations
+
+<hr>
+
+Приложение переведено на PWA: https://rick-and-morty-b4012.web.app/
