@@ -19,7 +19,7 @@ self.addEventListener("activate", async () => {
     );
 });
 
-self.addEventListener("fetch", (event: any) => {
+self.addEventListener("fetch", (event) => {
     event.respondWith(cacheFirst(event.request));
 });
 
